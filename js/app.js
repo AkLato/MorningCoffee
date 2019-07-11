@@ -176,7 +176,7 @@ function formatTiles (id) {
           
         //this builds the tiles
         thumbnail += '<a class="has-text-grey-lighter" href="' + url + '" target="_blank"><div class="post"></a>';
-        thumbnail += '<img class="postImg" src="' + thumbnailImage+ '"/><div class="post-content"><a class="is-pulled-right" href="#"><i class="fas fa-comments fa-lg"></i></a><a class="has-text-grey-lighter" href="' + url + '" target="_blank"><h2 class="post-title">' + reddit.data.children[i].data.title + '</h2></a><a class="" href="#"><i id="images" class="fas fa-chevron-up"></i></a></div></div></a>';
+        thumbnail += '<img class="postImg" src="' + thumbnailImage+ '"/><div class="post-content"><a class="is-pulled-right" href="#"><i class="fas fa-comments fa-lg"></i></a><a class="has-text-grey-lighter" href="' + url + '><h2 class="post-title">' + reddit.data.children[i].data.title + '</h2></a><a class="" href="#"><i id="images" class="fas fa-chevron-up"></i></a></div></div></a>';
         thumbnail += endDiv;
       } 
       
