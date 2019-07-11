@@ -155,7 +155,6 @@ function formatTiles (id) {
   }
 })
   .done(function( data ) {
-    
       
       let reddit = JSON.parse( data ),
           thumbnail = '',
@@ -170,16 +169,14 @@ function formatTiles (id) {
         
         //if no thumbnail - we need a default image
         if (reddit.data.children[i].data.thumbnail.length < 8) {
-          thumbnailImage = 'img/capture.png';
+          thumbnailImage = 'capture.png';
         } else {
           thumbnailImage = reddit.data.children[i].data.thumbnail;
         }
           
-        
-        
         //this builds the tiles
         thumbnail += '<a class="has-text-grey-lighter" href="' + url + '" target="_blank"><div class="post"><div>';
-        thumbnail += '<img class="postImg" src="' + thumbnailImage+ '"/></div><div class="post-content"><h2 class="post-title">' + reddit.data.children[i].data.title + '</h2></div></div></a>';
+        thumbnail += '<img class="postImg" src="' + thumbnailImage+ '"/></div><div class="post-content"><a class="is-pulled-right" href="#"><i class="fas fa-comments fa-lg"></i></a><h2 class="post-title">' + reddit.data.children[i].data.title + '</h2><a class="" href="#"><i class="fas fa-chevron-up"> 289</i></a></div></div></a>';
         thumbnail += endDiv;
       } 
       
@@ -192,7 +189,13 @@ function formatTiles (id) {
   
 }
 
+// Default set to F1 subreddit
+$(function() {
+  $('.default').click()
+});
+
 $('.redditExample').click(formatTiles);
+
 $( "#searchReddit" ).keydown(function(event) {
   if (event.keyCode == 13) {
       submit();
