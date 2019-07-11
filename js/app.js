@@ -169,7 +169,7 @@ function formatTiles (id) {
         
         //if no thumbnail - we need a default image
         if (reddit.data.children[i].data.thumbnail.length < 8) {
-          thumbnailImage = 'capture.png';
+          thumbnailImage = 'img/capture.png';
         } else {
           thumbnailImage = reddit.data.children[i].data.thumbnail;
         }
